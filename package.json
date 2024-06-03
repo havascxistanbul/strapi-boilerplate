@@ -1,0 +1,50 @@
+{
+  "name": "strapi-boilerplate",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "lint": "yarn run eslint eslint.config.mjs",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "docker-up:prod": "docker compose down && NODE_ENV=production docker compose up -d --build",
+    "docker-up:dev": "docker compose down && NODE_ENV=development docker compose up -d --build",
+    "docker-down": "docker-compose down",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.4.0",
+    "eslint": "9.x",
+    "eslint-plugin-prettier": "^5.1.3",
+    "globals": "^15.3.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.5",
+    "prettier": "^3.3.0",
+    "typescript-eslint": "^7.12.0"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "4.24.3",
+    "@strapi/plugin-i18n": "4.24.3",
+    "@strapi/plugin-users-permissions": "4.24.3",
+    "@strapi/strapi": "4.24.3",
+    "pg": "8.8.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "5.3.4",
+    "styled-components": "5.3.3"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "085e35d4-4aca-41ac-baf0-39071bef7f5b"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

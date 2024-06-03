@@ -1,0 +1,43 @@
+.tmp/
+.cache/
+
+node_modules/
+node_modules
+**/node_modules/
+**/dist
+
+npm-debug.log
+
+#git files
+.git
+.gitignore
+
+.env
+build/
+
+
+data/
+backup/
+
+.vscode
+README.md
+
+# Ignore all .log files
+**/*.logf
+
+.DS_Store
+
+# Don't ignore these files
+!.dockerignore
+!Dockerfile
+!src/
+
+conf
+logs
+
+.strapi/client
+dist
+.strapi-updater.json
+
+database
+.editorconfig
