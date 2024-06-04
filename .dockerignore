@@ -41,3 +41,4 @@ dist
 
 database
 .editorconfig
+.env.development

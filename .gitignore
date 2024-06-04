@@ -112,5 +112,5 @@ exports
 dist
 build
 .strapi-updater.json
-
-.vscode
+.env.development
+newrelic-infra/newrelic-infra.yml

@@ -11,8 +11,9 @@
     "lint": "yarn run eslint eslint.config.mjs",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "docker-up:prod": "docker compose down && NODE_ENV=production docker compose up -d --build",
-    "docker-up:dev": "docker compose down && NODE_ENV=development docker compose up -d --build",
-    "docker-down": "docker-compose down",
+    "docker-up:dev": "NODE_ENV=development docker compose -f docker-compose.dev.yml up -d --build",
+    "docker-down:prod": "docker-compose down -f docker-compose.yml",
+    "docker-down:dev": "docker compose -f docker-compose.yml -f docker-compose.dev.yml down",
     "prepare": "husky install"
   },
   "devDependencies": {

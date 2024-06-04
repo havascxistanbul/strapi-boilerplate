@@ -1,47 +1,15 @@
 version: '3'
 services:
-  agent:
-    container_name: newrelic-infra
-    build:
-      context: ./newrelic-infra
-      dockerfile: newrelic-infra.dockerfile
-    cap_add:
-      - SYS_PTRACE
-    pid: host
-    privileged: true
-    volumes:
-      - '/:/host:ro'
-      - '/var/run/docker.sock:/var/run/docker.sock'
-    restart: unless-stopped
-    networks:
-      - strapi_internal
-  nginx:
-    image: nginx:latest
-    restart: unless-stopped
-    container_name: nginx
-    ports:
-      - 80:80
-      - 443:443
-    networks:
-      - strapi_internal
-    volumes:
-      - ./conf/nginx/:/etc/nginx:ro
-      - ./logs/nginx/:/var/log/nginx
-      - /etc/localtime:/etc/localtime:ro
-      - ./.env:/opt/app/.env
-    depends_on:
-      - strapi
-
   strapi:
     container_name: strapi
     build:
       context: .
       dockerfile: ./docker/${NODE_ENV}/Dockerfile
       args:
-        NODE_ENV: ${NODE_ENV}
-    image: strapi:latest
+        NODE_ENV: development
+    image: strapi:dev
     restart: unless-stopped
-    env_file: .env
+    env_file: .env.development
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: ${DATABASE_HOST}
@@ -52,7 +20,7 @@ services:
       JWT_SECRET: ${JWT_SECRET}
       ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
       APP_KEYS: ${APP_KEYS}
-      NODE_ENV: ${NODE_ENV}
+      NODE_ENV: development
     volumes:
       - ./config:/opt/app/config
       - ./src:/opt/app/src
@@ -72,14 +40,13 @@ services:
     container_name: postgres
     platform: linux/amd64
     restart: unless-stopped
-    env_file: .env
+    env_file: .env.development
     environment:
       POSTGRES_USER: ${DATABASE_USERNAME}
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
       POSTGRES_DB: ${DATABASE_NAME}
     volumes:
       - strapi-data:/var/lib/postgresql/data/
-
     ports:
       - '5432:5432'
     networks:
