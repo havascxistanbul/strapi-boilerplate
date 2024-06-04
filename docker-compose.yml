@@ -12,6 +12,8 @@ services:
     volumes:
       - '/:/host:ro'
       - '/var/run/docker.sock:/var/run/docker.sock'
+    environment:
+      LICENSE_KEY: ${LICENSE_KEY}
     restart: unless-stopped
     networks:
       - strapi_internal
