@@ -1,57 +1,67 @@
-# 🚀 Getting started with Strapi
+# Strapi Boilerplate
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+A Strapi application
 
-### `develop`
+## Table of Contents
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+- [Introduction](#introduction)
+- [Get Started](#get-started)
+- [Scripts](#scripts)
 
-```
-npm run develop
-# or
-yarn develop
-```
+## Introduction
 
-### `start`
+This is a boilerplate for a Strapi application. It includes a variety of configurations and scripts to facilitate development and production environments using Docker.
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+## Get Started
 
-```
-npm run start
-# or
-yarn start
-```
+### Prerequisites
 
-### `build`
+- [Node.js](https://nodejs.org/en/) (>=18.0.0 <=20.x.x)
+- [Yarn](https://yarnpkg.com/)
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+### Installation
 
-```
-npm run build
-# or
-yarn build
-```
+1. **Clone the repository:**
 
-## ⚙️ Deployment
+   ```sh
+   git clone https://github.com/havascxistanbul/strapi-boilerplate.git
+   cd strapi-boilerplate
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+   ```
 
-## 📚 Learn more
+2. **Install dependencies:**
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+   ```sh
+   yarn install
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+   ```
 
-## ✨ Community
+3. **For development:**
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+   ```sh
+   yarn develop
+   ```
 
----
+4. **Commitlint permission:**
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+   ```sh
+   chmod ug+x .husky/*
+   ```
+
+## Scripts
+
+The following scripts are available in this project:
+
+- `develop`: Starts the Strapi application in development mode.
+- `start`: Starts the Strapi application.
+- `build`: Builds the Strapi application.
+- `strapi`: Runs the Strapi CLI.
+- `lint`: Runs ESLint.
+- `format`: Formats the code using Prettier.
+- `docker-up:prod`: Builds and starts the Docker containers in production mode.
+- `docker-up:dev`: Builds and starts the Docker containers in development mode.
+- `docker-down:prod`: Stops the Docker containers in production mode.
+- `docker-down:dev`: Stops the Docker containers in development mode.
+- `prepare`: Sets up Husky for Git hooks.

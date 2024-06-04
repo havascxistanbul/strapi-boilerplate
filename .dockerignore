@@ -23,7 +23,7 @@ backup/
 README.md
 
 # Ignore all .log files
-**/*.logf
+**/*.log
 
 .DS_Store
 
@@ -42,3 +42,6 @@ dist
 database
 .editorconfig
 .env.development
+.github
+**/*.github
+build.yml
