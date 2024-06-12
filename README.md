@@ -7,6 +7,7 @@ A Strapi application
 - [Introduction](#introduction)
 - [Get Started](#get-started)
 - [Scripts](#scripts)
+- [Commitlint](#commitlint)
 
 ## Introduction
 
@@ -41,7 +42,7 @@ This is a boilerplate for a Strapi application. It includes a variety of configu
 3. **For development:**
 
    ```sh
-   yarn develop
+   yarn docker-up:dev
    ```
 
 4. **Commitlint permission:**
@@ -65,3 +66,11 @@ The following scripts are available in this project:
 - `docker-down:prod`: Stops the Docker containers in production mode.
 - `docker-down:dev`: Stops the Docker containers in development mode.
 - `prepare`: Sets up Husky for Git hooks.
+
+## Commitlint
+
+For commiting
+
+https://commitlint.js.org/concepts/commit-conventions.html
+<br/>
+https://www.conventionalcommits.org/en/v1.0.0/#summary
